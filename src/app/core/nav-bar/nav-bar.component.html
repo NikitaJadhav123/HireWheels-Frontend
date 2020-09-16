@@ -3,9 +3,54 @@
     <a class="navbar-brand" href="#" style="color:white" routerLink="/home">
         <i class="fa fa-car" style="color:white;"></i>HireWheels</a>
   
-    <button style="right: 0%;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" >
-            Sign In
+   
+    <button style="right: 0%;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"  (click)="open(myModal)">
+        Sign In
     </button>
+    <ng-template #myModal let-modal> 
+      
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                
+                    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                        <span aria-hidden="true">×</span>
+                      </button>
+                   
+                     <h4 class="modal-title" id="myModalLabel"></h4>
+    
+                </div>
+                <div class="modal-body">
+                    <div role="tabpanel">
+                        <!-- Nav tabs  -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#signinTab" aria-controls="uploadTab" role="tab" data-toggle="tab">Sign In</a>
+                            </li>
+                            <li role="presentation"><a href="#signupTab" aria-controls="signupTab" role="tab" data-toggle="tab">Sign Up</a>
+                            </li>
+    
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">     
+                            <div role="tabpanel" class="tab-pane active" id="signinTab"><app-signin></app-signin></div>
+                            <div role="tabpanel" class="tab-pane " id="signupTab" routerLink="/signup" >signup</div>
+                        </div>
+                    </div>
+                
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" >Close</button>
+                    <button type="button" class="btn btn-primary save">Save changes</button>
+                </div>
+            
+            </div>
+        </div>
+
+    </ng-template>
+
+    
+   
 
 
 </nav>

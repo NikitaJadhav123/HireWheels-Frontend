@@ -1,0 +1,45 @@
+<div class="card bg-light mb-3" style="max-width: 20rem;">
+    <div class="card-header"><h5 style="text-align: center;">Sign In</h5></div>
+    <div class="card-body">
+      <h5 class="card-title"></h5>
+      <form (ngSubmit)='onSubmit(signinForm.value)' #signinForm="ngForm">
+        <div class="form-group">
+            <label for="email" class="form-label">Email Id</label>
+            <input style="float:right" type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" [(ngModel)]="email" required   #name="ngModel" />
+            <br />
+
+          
+            <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+                <div *ngIf="name.errors.required">
+                    Email id is required
+                </div>
+                <div [hidden]="!name.errors?.pattern">
+                    Enter a valid email address
+                  </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="form-label">Password</label>
+            <input style="float: right;" type="password" name="password" [(ngModel)]="password" required  #passwd="ngModel" />
+            <br />
+            <div *ngIf="passwd.invalid && (passwd.dirty || passwd.touched)" class="alert alert-danger">
+                <div *ngIf="passwd.errors.required">
+                    Password is required
+                </div>
+               
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span>Don't have an account? Sign Up </span> 
+        </div>
+     
+
+          
+        <div class="form-group">
+            <input type='submit' value="Sign In" [disabled]="!signinForm.valid" class="btn btn-primary" />
+        </div>
+    </form> 
+    
+    </div>
+  </div>
