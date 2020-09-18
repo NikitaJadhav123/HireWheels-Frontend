@@ -5,7 +5,8 @@ import { SigninComponent } from './signin/signin.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+   
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ]
  
 })

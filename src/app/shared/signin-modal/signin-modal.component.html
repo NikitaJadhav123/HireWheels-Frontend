@@ -4,25 +4,35 @@
      <h4 class="modal-title" id="myModalLabel"></h4>
 </div>
 <div class="modal-body">
-<div role="tabpanel">
-    <!-- Nav tabs  -->
-    <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active"><a href="#signinTab" aria-controls="uploadTab" role="tab" data-toggle="tab">Sign In</a>
-        </li>
-        <li role="presentation"><a href="#signupTab" aria-controls="signupTab" role="tab" data-toggle="tab">Sign Up</a>
-        </li>
 
-    </ul>
-    <!-- Tab panes -->
-    <div class="tab-content">     
-        <div role="tabpanel" class="tab-pane active" id="signinTab"><app-signin></app-signin></div>
-        <div role="tabpanel" class="tab-pane" id="signupTab"><app-signup></app-signup></div>
-    </div>
-</div>
+    <ngb-tabset [destroyOnHide]="false">
+  
+        <ngb-tab title="Sign In">
+          <ng-template ngbTabContent>
+            <app-signin></app-signin>
+          </ng-template>
+        </ngb-tab>
+         
+        <ngb-tab>
+          <ng-template ngbTabTitle>Sign Up</ng-template>
+          <ng-template ngbTabContent>
+              <app-signup></app-signup>
+          </ng-template>
+        </ngb-tab>
+        
+        <ngb-tab title="Disabled" [disabled]="true">
+          <ng-template ngbTabContent>
+            <p>This is Disabled</p>
+          </ng-template>
+        </ngb-tab>
+         
+      </ngb-tabset>
+   
+    
 </div>
 <div class="modal-footer">
-<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-<button type="button" class="btn btn-primary save">Save changes</button>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeModal('close')">Close</button>
+    <button type="button" class="btn btn-primary" (click)="closeModal('changes saved!')">Save changes</button>
 </div>
 
 
