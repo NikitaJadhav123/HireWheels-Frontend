@@ -10,7 +10,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SigninComponent } from './shared/signin/signin.component';
 import { SignupComponent } from './shared/signup/signup.component';
-
+import { MatTabsModule } from '@angular/material/tabs';
+import { SigninModalComponent } from './shared/signin-modal/signin-modal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { SignupComponent } from './shared/signup/signup.component';
     HomeComponent,
     FooterComponent,
     SigninComponent,
-    SignupComponent
+    SignupComponent,
+    SigninModalComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,8 @@ import { SignupComponent } from './shared/signup/signup.component';
     BrowserAnimationsModule,
     NgbModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
