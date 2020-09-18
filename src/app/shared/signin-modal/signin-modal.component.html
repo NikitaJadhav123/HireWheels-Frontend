@@ -1,32 +1,28 @@
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                </button>
-                 <h4 class="modal-title" id="myModalLabel"></h4>
-            </div>
-            <div class="modal-body">
-                <div role="tabpanel">
-                    <!-- Nav tabs  -->
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#signinTab" aria-controls="uploadTab" role="tab" data-toggle="tab">Sign In</a>
-                        </li>
-                        <li role="presentation"><a href="#signupTab" aria-controls="signupTab" role="tab" data-toggle="tab">Sign Up</a>
-                        </li>
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+    </button>
+     <h4 class="modal-title" id="myModalLabel"></h4>
+</div>
+<div class="modal-body">
+<div role="tabpanel">
+    <!-- Nav tabs  -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#signinTab" aria-controls="uploadTab" role="tab" data-toggle="tab">Sign In</a>
+        </li>
+        <li role="presentation"><a href="#signupTab" aria-controls="signupTab" role="tab" data-toggle="tab">Sign Up</a>
+        </li>
 
-                    </ul>
-                    <!-- Tab panes -->
-                    <div class="tab-content">     
-                        <div role="tabpanel" class="tab-pane active" id="signinTab"><app-signin></app-signin></div>
-                        <div role="tabpanel" class="tab-pane" id="signupTab"><app-signup></app-signup></div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary save">Save changes</button>
-            </div>
-        </div>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">     
+        <div role="tabpanel" class="tab-pane active" id="signinTab"><app-signin></app-signin></div>
+        <div role="tabpanel" class="tab-pane" id="signupTab"><app-signup></app-signup></div>
     </div>
 </div>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+<button type="button" class="btn btn-primary save">Save changes</button>
+</div>
+
+

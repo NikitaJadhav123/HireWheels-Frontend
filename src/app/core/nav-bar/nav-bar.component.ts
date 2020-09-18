@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { MatTabsModule } from '@angular/material/tabs';
+import { SigninModalComponent } from 'src/app/shared/signin-modal/signin-modal.component';
 
 @Component({
   selector: 'app-nav-bar',
@@ -12,11 +13,39 @@ export class NavBarComponent implements OnInit {
 
   closeResult: string;
 
+  constructor(
+    private modalService: NgbModal
+  ) {
+  }
 
-  constructor() { }
+
 
   ngOnInit(): void {
   }
+  openModal() {
+    const modalRef = this.modalService.open(SigninModalComponent,
+      {
+        scrollable: true,
+        windowClass: 'myCustomModalClass',
+        // keyboard: false,
+        // backdrop: 'static'
+      });
+
+    let data = {
+      prop1: 'Some Data',
+      prop2: 'From Parent Component',
+      prop3: 'This Can be anything'
+    }
+
+    modalRef.componentInstance.fromParent = data;
+    modalRef.result.then((result) => {
+      console.log(result);
+    }, (reason) => {
+    });
+  }
+}
+
+ 
 
   /*
   open(content) {
@@ -40,4 +69,4 @@ export class NavBarComponent implements OnInit {
     
 */
 
-}
+
